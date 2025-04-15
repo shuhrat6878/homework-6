@@ -30,7 +30,6 @@ let order2 = new orderPizza("medium", ["cheese", "tomato", "free"]);
 
 /* 
 
-// Ma'lumotlar strukturasini tayyorlash
 const pizzaOrders = [
     { id: 1, type: "pishloqli", size: "large" },
     { id: 2, type: "tovuqli", size: "medium" },
@@ -40,12 +39,9 @@ const pizzaOrders = [
     { id: 6, type: "tovuqli", size: "large" }
 ];
 
-// Narx hisoblash funksiyasi
 function calculatePrice(order) {
-    // Asosiy narx
     let basicPrice = 10000;
 
-    // Typega qarab qo'shimcha narx
     switch (order.type) {
         case "pishloqli":
             basicPrice += 5000;
@@ -61,7 +57,6 @@ function calculatePrice(order) {
             break;
     }
 
-    // Sizega qarab qo'shimcha narx
     switch (order.size) {
         case "small":
             basicPrice += 1000;
@@ -74,36 +69,31 @@ function calculatePrice(order) {
             break;
     }
 
-    // Yakuniy hisoblangan qiymatni qaytaramiz
     return basicPrice;
 }
 
-// Callback funksiyasi
 function pizzaReadyCallback(order, totalPrice) {
     console.log(`Pitsa #${order.id} (${order.type}, ${order.size}) tayyor! Narxi: ${totalPrice} so'm`);
 }
 
-// Asosiy buyurtma funksiyasi
 function orderPizza(order, callback) {
     console.log(`Pitsa #${order.id} (${order.type}, ${order.size}) buyurtma qilindi. Pishirish boshlandi...`);
 
-    // 2 soniyadan keyin
     setTimeout(() => {
-        // Narxni hisoblaymiz
         const totalPrice = calculatePrice(order);
 
-        // Callback funksiyasini chaqiramiz
         callback(order, totalPrice);
     }, 2000);
 }
 
-// Massivni qayta ishlash
 pizzaOrders.forEach(function (order) {
     orderPizza(order, pizzaReadyCallback);
 });
 
 */
 
+// 2-projekt
+/* 
 const sotuv = [
     {
         id: 1,
@@ -127,7 +117,6 @@ const sotuv = [
 function calculateFinalPrice(basePrice, brand, model) {
   let finalPrice = basePrice;
 
-  // Brendga qarab ustama qo'shamiz
   switch (brand.toLowerCase()) {
     case "Macbook":
       finalPrice *= 1.05; // +5% ustama
@@ -135,12 +124,11 @@ function calculateFinalPrice(basePrice, brand, model) {
     case "iphone":
       finalPrice *= 0.98; // -2% chegirma
         break;
-    case "iphone":
+    case "Samsung":
       finalPrice *= 0.9; // -10% chegirma
         break;
   }
 
-  // Modelga qarab chegirma qo'shamiz
   switch (model.toLowerCase()) {
     case "eski_model":
       finalPrice *= 0.9; // -10% chegirma
@@ -161,3 +149,79 @@ const finalPrice = calculateFinalPrice(basePrice, brand, model);
 console.log(`Asosiy narx: ${basePrice}`);
 console.log(`Brend: ${brand}, Model: ${model}`);
 console.log(`Yakuniy narx: ${finalPrice}`);
+
+*/
+
+
+
+// let praducts = [
+//     {
+//         id: 1,
+//         productName: "MacBook Pro 16-inch",
+//         basePrice: 30000000,
+//         monthlyPayment: 6
+//     },
+//     {
+//         id: 2,
+//         productName: "iPhone 15 Pro ",
+//         basePrice: 13000000,
+//         monthlyPayment: 5
+//     }, {
+//         id: 1,
+//         productName: "Samsung Galaxy S25 Ultra",
+//         basePrice: 14000000,
+//         monthlyPayment: 9
+//     },
+
+// ];
+
+// function Order() { }
+
+
+// function calculateFinalPrice(basePrice) {
+
+//     let finalPrice = basePrice;
+//     return finalPrice;
+// }
+
+
+// function calculateInstallments() {
+
+//  }
+
+// function deviceReadyCallback() { }
+
+// function orderDevice(){}
+
+
+
+function b() {
+    return () => {
+        return () => {
+            return () => {
+                let c = [1, 2];
+                return c;
+            }
+        }
+    }
+}
+let res = b()()()();
+console.log(res);
+
+
+function c(b) {
+    return (k) => {
+        return (d) => {
+            return (f) => {
+                return (g) => {
+                    return (y) => {
+                        return b+k+d+f+g+y;
+                    }
+                 }
+            }
+        }
+    } 
+}
+
+let box = c(2)(3)(4)(4)(6)()
+console.log(box);
